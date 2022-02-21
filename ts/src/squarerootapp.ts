@@ -16,7 +16,7 @@ interface ZomeInput {
 
 // custom data we want back from the hApp
 interface ZomeOutput {
-  other_number: number;
+  square_root: number;
 }
 
 AppWebsocket.connect(WS_URL).then(
@@ -28,7 +28,7 @@ AppWebsocket.connect(WS_URL).then(
     }
 
     const cell_id = appInfo.cell_data[0].cell_id;
-    const payload: ZomeInput = { number: 6 };
+    const payload: ZomeInput = { number: 7 };
     // define the context of the request
     const apiRequest: CallZomeRequest =
     {
@@ -44,7 +44,7 @@ AppWebsocket.connect(WS_URL).then(
       // make the request
       const numbersOutput: ZomeOutput = await appClient.callZome(apiRequest);
       // the result is already deserialized
-      console.log('Result of the call:', numbersOutput);
+      console.log('Square root:', numbersOutput);
     } catch (error) {
       console.log('Got an error:', error);
     } finally {

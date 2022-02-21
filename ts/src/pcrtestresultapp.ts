@@ -4,19 +4,19 @@ import { AppWebsocket, CallZomeRequest } from '@holochain/conductor-api';
 const WS_URL = 'ws://localhost:8888';
 const H_APP_ID = 'test-app';
 //const ZOME_NAME = 'numbers';
-const ZOME_NAME = 'squareroots';
+const ZOME_NAME = 'pcrtests';
 //const FN_NAME = 'add_ten';
-const FN_NAME = 'square_root';
+const FN_NAME = 'book_pcrtest';
 
 
 // custom data we want to pass the hApp
 interface ZomeInput {
-  number: number;
+  patientinfo: String;
 }
 
 // custom data we want back from the hApp
 interface ZomeOutput {
-  other_number: number;
+  booking_day: String;
 }
 
 AppWebsocket.connect(WS_URL).then(
@@ -28,7 +28,7 @@ AppWebsocket.connect(WS_URL).then(
     }
 
     const cell_id = appInfo.cell_data[0].cell_id;
-    const payload: ZomeInput = { number: 6 };
+    const payload: ZomeInput = { patientinfo: "an" };
     // define the context of the request
     const apiRequest: CallZomeRequest =
     {
@@ -42,9 +42,9 @@ AppWebsocket.connect(WS_URL).then(
 
     try {
       // make the request
-      const numbersOutput: ZomeOutput = await appClient.callZome(apiRequest);
+      const booking: ZomeOutput = await appClient.callZome(apiRequest);
       // the result is already deserialized
-      console.log('Result of the call:', numbersOutput);
+      console.log('Result of the pcr test:', booking);
     } catch (error) {
       console.log('Got an error:', error);
     } finally {

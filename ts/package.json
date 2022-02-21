@@ -5,12 +5,13 @@
   "description": "Reference implementation",
   "scripts": {
     "admin": "ts-node src/admin.ts",
-    "app": "ts-node src/app.ts"
+    "app": "ts-node src/squarerootapp.ts"
   },
   "author": "Jost Schulte",
   "license": "ISC",
   "dependencies": {
-    "@holochain/conductor-api": "0.1.1"
+    "@holochain/conductor-api": "0.1.1",
+    "concurrently": "^6.3.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.28.5",
