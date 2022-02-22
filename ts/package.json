@@ -5,7 +5,7 @@
   "description": "Reference implementation",
   "scripts": {
     "admin": "ts-node src/admin.ts",
-    "app": "ts-node src/squarerootapp.ts"
+    "app": "ts-node src/pcrtestresultapp.ts"
   },
   "author": "Jost Schulte",
   "license": "ISC",

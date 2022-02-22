@@ -2,7 +2,7 @@ import { AppWebsocket, CallZomeRequest } from '@holochain/conductor-api';
 
 const WS_URL = 'ws://localhost:8888';
 const H_APP_ID = 'test-app';
-const ZOME_NAME = 'holotoken';
+const ZOME_NAME = 'tradingprices';
 const FN_NAME = 'fetch_averagehot';
 
 
@@ -13,7 +13,7 @@ interface ZomeInput {
 
 // custom data we want back from the hApp
 interface ZomeOutput {
-  hot_trading_price: String;
+  hot_tradingprice: String;
 }
 
 AppWebsocket.connect(WS_URL).then(

@@ -1,11 +1,9 @@
 import { AppWebsocket, CallZomeRequest } from '@holochain/conductor-api';
 
-//const WS_URL = 'ws://localhost:8888';
+
 const WS_URL = 'ws://localhost:8888';
 const H_APP_ID = 'test-app';
-//const ZOME_NAME = 'numbers';
 const ZOME_NAME = 'pcrtests';
-//const FN_NAME = 'add_ten';
 const FN_NAME = 'book_pcrtest';
 
 
@@ -28,7 +26,7 @@ AppWebsocket.connect(WS_URL).then(
     }
 
     const cell_id = appInfo.cell_data[0].cell_id;
-    const payload: ZomeInput = { patientinfo: "an" };
+    const payload: ZomeInput = { patientinfo: "ab" };
     // define the context of the request
     const apiRequest: CallZomeRequest =
     {
